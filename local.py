@@ -1,6 +1,5 @@
 from deepface import DeepFace
 import matplotlib.pyplot as plt
-import numpy as np
 import cv2
 
 # List of available backends, models, and distance metrics
@@ -9,7 +8,8 @@ models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID",
 metrics = ["cosine", "euclidean", "euclidean_l2"]
 
 # Path to the image for face recognition
-img = "Data/elcan.jpg"
+img = "Data/Elcan.jpg"
+
 
 def face_recognition(img):
     # Perform face recognition on the provided image
@@ -17,7 +17,7 @@ def face_recognition(img):
     people = DeepFace.find(img_path=img, db_path="Data/", model_name=models[2], distance_metric=metrics[1])
 
     # Display the original image
-    plt.imshow(cv2.imread(img))
+    # plt.imshow(cv2.imread(img))
 
     # Print the identities of the recognized people
     for person in people:
@@ -34,7 +34,8 @@ def realtime_face_recognition():
 
         # Perform face recognition on the captured frame
         # Find faces and identify people using a specific model and distance metric
-        people = DeepFace.find(img_path=frame, db_path="Data/", model_name=models[2], distance_metric=metrics[2], enforce_detection=False)
+        people = DeepFace.find(img_path=frame, db_path="Data/", model_name=models[2], distance_metric=metrics[2],
+                               enforce_detection=False)
 
         for person in people:
             # Retrieve the coordinates of the face bounding box
@@ -44,7 +45,7 @@ def realtime_face_recognition():
             h = person['source_h'][0]
 
             # Draw a rectangle around the face
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
             # Get the person's name and display it on the image
             name = person['identity'][0].split('/')[1]
@@ -63,8 +64,9 @@ def realtime_face_recognition():
     vid.release()
     cv2.destroyAllWindows()
 
+
 # Perform face recognition on a single image
-# face_recognition(img)
+face_recognition(img)
 
 # Perform real-time face recognition using the webcam
 # realtime_face_recognition()
