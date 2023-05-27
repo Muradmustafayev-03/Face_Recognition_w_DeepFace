@@ -1,5 +1,6 @@
-deepface
-numpy
+deepface~=0.0.79
+numpy==1.24.3
 pandas
-opencv-python
-matplotlib
+opencv-python~=4.7.0.72
+matplotlib~=3.7.1
+Flask~=2.3.2

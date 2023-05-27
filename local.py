@@ -17,7 +17,7 @@ def face_recognition(img):
     people = DeepFace.find(img_path=img, db_path="Data/", model_name=models[2], distance_metric=metrics[1])
 
     # Display the original image
-    # plt.imshow(cv2.imread(img))
+    plt.imshow(cv2.imread(img))
 
     # Print the identities of the recognized people
     for person in people:
@@ -66,7 +66,7 @@ def realtime_face_recognition():
 
 
 # Perform face recognition on a single image
-face_recognition(img)
+# face_recognition(img)
 
 # Perform real-time face recognition using the webcam
 # realtime_face_recognition()
