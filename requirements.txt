@@ -4,3 +4,4 @@ pandas
 opencv-python~=4.7.0.72
 matplotlib~=3.7.1
 Flask~=2.3.2
+requests~=2.31.0

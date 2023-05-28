@@ -8,7 +8,7 @@ models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID",
 metrics = ["cosine", "euclidean", "euclidean_l2"]
 
 # Path to the image for face recognition
-img = "Data/elcan.jpg"
+img_path = "Data/elcan.jpg"
 
 
 def face_recognition(img):
@@ -66,7 +66,7 @@ def realtime_face_recognition():
 
 
 # Perform face recognition on a single image
-# face_recognition(img)
+# face_recognition(img_path)
 
 # Perform real-time face recognition using the webcam
 # realtime_face_recognition()
