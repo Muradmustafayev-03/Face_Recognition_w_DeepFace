@@ -21,6 +21,8 @@ def recognize_person():
 
 
 def face_recognition(image_file):
+    # Create the temp directory if it doesn't exist
+    os.makedirs('/temp/', exist_ok=True)
     # Create a path to store the image temporary
     path = os.path.join('/temp/', image_file.filename)
     # Save the image file (because the function takes the path)
