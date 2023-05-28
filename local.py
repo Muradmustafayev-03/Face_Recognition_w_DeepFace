@@ -8,7 +8,7 @@ models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID",
 metrics = ["cosine", "euclidean", "euclidean_l2"]
 
 # Path to the image for face recognition
-img = "Data/Elcan.jpg"
+img = "Data/elcan.jpg"
 
 
 def face_recognition(img):

@@ -19,7 +19,7 @@ def recognize_person():
 
 
 def face_recognition(image_file):
-    path = '/temp/image'
+    path = os.path.join('/temp/', image_file.filename)
     # Save the image file (because the function takes the path)
     image_file.save(path)
     # Perform face recognition on the provided image
@@ -31,3 +31,7 @@ def face_recognition(image_file):
     # there will be only 1 person recognized
     person = people[0]['identity'][0].split('/')[1]
     return person
+
+
+if __name__ == '__main__':
+    app.run()
