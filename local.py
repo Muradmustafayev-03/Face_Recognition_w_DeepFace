@@ -7,16 +7,16 @@ backends = ["opencv", "ssd", "dlib", "mtcnn", "retinaface"]
 models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib", "SFace"]
 metrics = ["cosine", "euclidean", "euclidean_l2"]
 
-# Path to the image for face recognition
+# Path to the image.jpg for face recognition
 img_path = "Data/elcan.jpg"
 
 
 def face_recognition(img):
-    # Perform face recognition on the provided image
+    # Perform face recognition on the provided image.jpg
     # Find faces and identify people using a specific model and distance metric
     people = DeepFace.find(img_path=img, db_path="Data/", model_name=models[2], distance_metric=metrics[1])
 
-    # Display the original image
+    # Display the original image.jpg
     plt.imshow(cv2.imread(img))
 
     # Print the identities of the recognized people
@@ -47,7 +47,7 @@ def realtime_face_recognition():
             # Draw a rectangle around the face
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-            # Get the person's name and display it on the image
+            # Get the person's name and display it on the image.jpg
             name = person['identity'][0].split('/')[1]
             cv2.putText(frame, name, (x, y), cv2.FONT_ITALIC, 1, (0, 0, 255), 2)
 
@@ -65,8 +65,8 @@ def realtime_face_recognition():
     cv2.destroyAllWindows()
 
 
-# Perform face recognition on a single image
-# face_recognition(img_path)
+# Perform face recognition on a single image.jpg
+face_recognition(img_path)
 
 # Perform real-time face recognition using the webcam
 # realtime_face_recognition()
