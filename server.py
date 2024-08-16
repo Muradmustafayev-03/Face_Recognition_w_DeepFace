@@ -21,9 +21,9 @@ def preprocess(image: Image):
 def face_recognition():
     print('request accepted')
     image = Image.open(BytesIO(request.data))  # decode the bytestream into image
-    image = preprocess(image)  # preprocess the image
+    image = preprocess(image)
     path = f'{time_ns()}.jpg'  # compose unique filename
-    image.save(path, 'JPEG')  # save the image file
+    image.save(path, 'JPEG')
     try:
         people = DeepFace.find(img_path=path, db_path="Data/", model_name=models[2], distance_metric=metrics[1],
                                enforce_detection=False)
